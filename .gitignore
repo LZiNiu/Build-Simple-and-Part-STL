@@ -13,7 +13,9 @@
 
 Some Analysis.md
 .vs
-
+Debug
+.Debug
+*.vcxproj
 # Compiled Dynamic libraries
 *.so
 *.dylib
