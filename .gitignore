@@ -11,6 +11,9 @@
 *.gch
 *.pch
 
+Some Analysis.md
+.vs
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
