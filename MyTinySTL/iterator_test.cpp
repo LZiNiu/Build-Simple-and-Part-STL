@@ -51,7 +51,10 @@ int main() {
 	v.push_back(1);
 	v.push_back(2);
 	vector<int>::iterator it;*/
-	std::cout << func2(1);
+	
+	int* p1 = nullptr;
+	int* p2 = nullptr;
+	std::cout << p1 - p1;
 
 	return 0;
 }

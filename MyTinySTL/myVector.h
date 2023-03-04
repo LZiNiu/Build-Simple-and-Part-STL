@@ -4,28 +4,40 @@
 template<typename T>
 class vector {
 private:
-	T* data;
-	size_t m_size;
-	size_t m_capacity;
-	//unsigned int Iter;
-	bool is_reserve;
-	
-	
-	class iterator {
-		private:
-			T *ptr;
 
-		public:
-			iterator() :ptr(nullptr) {};
-			
-			T& operator*();
-			T& operator->();
-		};
+	T* first;
+	T* end;
+	T* EndOfStorage;
+
+	bool is_reserve;
+
 public:
-	vector() :data(nullptr),
-		m_size(0),
-		m_capacity(0),
-		/*Iter(0)*/
+	typedef T* pointer;
+	typedef T& reference;
+	
+	struct iterator {
+		
+		pointer ptr;
+
+		iterator() :ptr(nullptr) {}
+			
+		reference operator*() { return *ptr; }
+		pointer operator->() { return ptr; }
+		
+		//++i
+		reference operator++() { ptr++; return *this; }
+		//i++
+		reference operator++(int) { 
+			iterator temp = *this;
+			++(*this);
+			return temp;
+		}
+	};
+public:
+	vector() :
+		first(nullptr),
+		end(nullptr),
+		EndOfStorage(nullptr),
 		is_reserve(false)
 	{};
 
